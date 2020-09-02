@@ -1,5 +1,7 @@
 package org.launchcode.techjobs_oo;
 
+import java.util.Objects;
+
 public class PositionType {
     private int id;
     private static int nextId = 1;
@@ -16,9 +18,22 @@ public class PositionType {
     }
 
     // TODO: Add a custom toString() method that returns the data stored in 'value'.
+    public String toString() {
+        return this.value;
+    }
 
     // TODO: Add custom equals and hashCode methods. Consider two PositionType objects "equal" when
     //  their id fields match.
+    @Override
+    public boolean equals(Object o) {
+        PositionType that = (PositionType) o;
+        return getId() == that.getId();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getValue());
+    }
 
     // Getters and Setters:
 
@@ -33,4 +48,6 @@ public class PositionType {
     public void setValue(String value) {
         this.value = value;
     }
+
+
 }
