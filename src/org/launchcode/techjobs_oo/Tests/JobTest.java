@@ -6,8 +6,7 @@ import org.launchcode.techjobs_oo.*;
 
 import java.io.StringReader;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.*;
 
 public class JobTest {
 
@@ -23,6 +22,16 @@ public class JobTest {
     @Test
     public void testSettingJobId() {
         assertFalse(test_job1.equals(test_job2));
+    }
+
+    @Test
+    public void testJobConstructorSetsAllFields() {
+        assertTrue(test_job1 instanceof Job);
+        assertEquals(test_job1.getName().toString(), "Product tester");
+        assertEquals(test_job1.getEmployer().toString(), "ACME");
+        assertEquals(test_job1.getLocation().toString(), "Desert");
+        assertEquals(test_job1.getPositionType().toString(), "Quality control");
+        assertEquals(test_job1.getCoreCompetency().toString(), "Persistence");
     }
 
     @Test
