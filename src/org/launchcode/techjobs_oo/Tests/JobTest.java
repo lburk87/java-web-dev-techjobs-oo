@@ -27,7 +27,7 @@ public class JobTest {
     @Test
     public void testJobConstructorSetsAllFields() {
         assertTrue(test_job1 instanceof Job);
-        assertEquals(test_job1.getName().toString(), "Product tester");
+        assertEquals(test_job1.getName(), "Product tester");
         assertEquals(test_job1.getEmployer().toString(), "ACME");
         assertEquals(test_job1.getLocation().toString(), "Desert");
         assertEquals(test_job1.getPositionType().toString(), "Quality control");
@@ -40,7 +40,37 @@ public class JobTest {
     }
 
     @Test
-    public void testToString() {
+    public void toStringPrintsId() {
+        assertTrue(test_job1.toString().contains("ID: "+test_job1.getId()));
+    }
+
+    @Test
+    public void toStringPrintsName() {
+        assertTrue(test_job1.toString().contains("Name: "+test_job1.getName()));
+    }
+
+    @Test
+    public void toStringPrintsEmployer() {
+        assertTrue(test_job1.toString().contains("Employer: "+test_job1.getEmployer()));
+    }
+
+    @Test
+    public void toStringPrintsLocation() {
+        assertTrue(test_job1.toString().contains("Location: "+test_job1.getLocation()));
+    }
+
+    @Test
+    public void toStringPrintsPositionType() {
+        assertTrue(test_job1.toString().contains("Position Type: "+test_job1.getPositionType()));
+    }
+
+    @Test
+    public void toStringPrintsCoreCompetency() {
+        assertTrue(test_job1.toString().contains("Core Competency: "+test_job1.getCoreCompetency()));
+    }
+
+    @Test
+    public void toStringPrintsCorrectly() {
         assertEquals(test_job1.toString(), "\nID: "+test_job1.getId()+"\nName: "+test_job1.getName()+"\nEmployer: "+test_job1.getEmployer()+"\nLocation: "+test_job1.getLocation()+"\nPosition Type: "+test_job1.getPositionType()+"\nCore Competency: "+test_job1.getCoreCompetency()+"\n");
     }
 
