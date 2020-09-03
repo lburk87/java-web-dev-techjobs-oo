@@ -40,6 +40,11 @@ public class JobTest {
     }
 
     @Test
+    public void toStringEndsWithBlankLine() {
+        assertEquals(test_job1.toString().substring(test_job1.toString().length()-1),"\n");
+    }
+
+    @Test
     public void toStringPrintsId() {
         assertTrue(test_job1.toString().contains("ID: "+test_job1.getId()));
     }
