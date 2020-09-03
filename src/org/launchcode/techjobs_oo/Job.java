@@ -95,4 +95,8 @@ public class Job {
         this.coreCompetency = coreCompetency;
     }
 
+    public String toString() {
+        return "\n"+"ID: "+this.getId()+"\nName: "+this.getName()+"\nEmployer: "+this.getEmployer()+"\nLocation: "+this.getLocation()+"\nPosition Type: "+this.getPositionType()+"\nCore Competency: "+this.getCoreCompetency()+"\n";
+    }
+
 }
