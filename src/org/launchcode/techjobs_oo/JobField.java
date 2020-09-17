@@ -13,8 +13,9 @@ public abstract class JobField {
     }
 
     public JobField(String value) {
-        this();
-        this.value = value;
+        if (value != null && !value.isEmpty()) {
+            this.value = value;
+        }
     }
 
     // Custom toString, equals, and hashCode methods:
